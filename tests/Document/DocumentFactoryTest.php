@@ -25,8 +25,22 @@ class DocumentFactoryTest extends PHPUnit_Framework_TestCase
         $this->factory = new Document\DocumentFactory();
     }
 
-    public function testTrue()
+    public function invalidDataProvider()
     {
-        $this->assertTrue(true);
+        return [
+            [[]],
+            [['data' => null, 'errors' => null]],
+            [['included' => null]]
+        ];
+    }
+
+    /**
+     * @dataProvider invalidDataProvider
+     */
+    public function testInvalid(array $data)
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        $this->factory->fromArray($data);
     }
 }

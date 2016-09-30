@@ -11,6 +11,10 @@ abstract class Document implements DocumentInterface
 {
     protected $meta;
 
+    protected $jsonapi;
+
+    protected $links;
+
     /**
      * Factory
      *
@@ -21,7 +25,24 @@ abstract class Document implements DocumentInterface
     /**
      * {@inheritdoc}
      */
-    abstract public function toArray();
+    public function toArray()
+    {
+        $data = [];
+
+        if (isset($this->meta)) {
+            $data['meta'] = $this->meta;
+        }
+
+        if (isset($this->jsonapi)) {
+            $data['jsonapi'] = $this->jsonapi;
+        }
+
+        if (isset($this->links)) {
+            $data['links'] = $this->links;
+        }
+
+        return $data;
+    }
 
     /**
      * From array

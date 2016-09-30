@@ -9,13 +9,30 @@ namespace Elao\JsonApi\Document;
  */
 class ErrorsDocument extends Document
 {
-    protected $errors;
+    protected $errors = [];
+
+    /**
+     * Constructor
+     *
+     * @param array $errors
+     */
+    public function __construct(array $errors = [])
+    {
+        $this->errors = $errors;
+    }
 
     /**
      * {@inheritdoc}
      */
     public function toArray()
     {
-        return [];
+        $data = [
+            'errors' => $this->errors
+        ];
+
+        return array_merge(
+            parent::toArray(),
+            $data
+        );
     }
 }
