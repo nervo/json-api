@@ -1,0 +1,25 @@
+{
+  "name": "elao/json-api",
+  "description": "Elao - Json Api",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Elao",
+      "email": "contact@elao.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Elao\\JsonApi\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Elao\\JsonApi\\Tests\\": "tests"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.5"
+  }
+}
