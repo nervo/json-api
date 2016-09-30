@@ -24,6 +24,20 @@ class DataDocument extends Document
     }
 
     /**
+     * Set included
+     *
+     * @param array $included
+     *
+     * @return $this
+     */
+    public function setIncluded(array $included = [])
+    {
+        $this->included = $included;
+
+        return $this;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function toArray()

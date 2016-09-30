@@ -43,4 +43,25 @@ class DocumentFactoryTest extends PHPUnit_Framework_TestCase
 
         $this->factory->fromArray($data);
     }
+
+    public function testData()
+    {
+        $document = $this->factory->fromArray(['data' => null]);
+
+        $this->assertInstanceOf(Document\DataDocument::class, $document);
+    }
+
+    public function testErrors()
+    {
+        $document = $this->factory->fromArray(['errors' => []]);
+
+        $this->assertInstanceOf(Document\ErrorsDocument::class, $document);
+    }
+
+    public function testMeta()
+    {
+        $document = $this->factory->fromArray(['meta' => []]);
+
+        $this->assertInstanceOf(Document\MetaDocument::class, $document);
+    }
 }

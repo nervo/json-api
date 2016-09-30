@@ -23,6 +23,48 @@ abstract class Document implements DocumentInterface
     private static $factory = null;
 
     /**
+     * Set meta
+     *
+     * @param array $meta
+     *
+     * @return $this
+     */
+    public function setMeta(array $meta = [])
+    {
+        $this->meta = $meta;
+
+        return $this;
+    }
+
+    /**
+     * Set jsonapi
+     *
+     * @param array $jsonapi
+     *
+     * @return $this
+     */
+    public function setJsonapi(array $jsonapi = [])
+    {
+        $this->jsonapi = $jsonapi;
+
+        return $this;
+    }
+
+    /**
+     * Set links
+     *
+     * @param array $links
+     *
+     * @return $this
+     */
+    public function setLinks(array $links = [])
+    {
+        $this->links = $links;
+
+        return $this;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function toArray()
