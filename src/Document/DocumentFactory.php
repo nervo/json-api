@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * This file is part of the Elao JsonApi component.
+ *
+ * Copyright © Elao
+ *
+ * @author Elao <contact@elao.com>
+ */
+
 namespace Elao\JsonApi\Document;
 
 /**
@@ -14,9 +22,9 @@ class DocumentFactory
      *
      * @param array $data
      *
+     * @throws \InvalidArgumentException
      * @return DocumentInterface
      *
-     * @throws \InvalidArgumentException
      */
     public function fromArray(array $data)
     {

@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * This file is part of the Elao JsonApi component.
+ *
+ * Copyright © Elao
+ *
+ * @author Elao <contact@elao.com>
+ */
+
 namespace Elao\JsonApi\Document;
 
 /**
